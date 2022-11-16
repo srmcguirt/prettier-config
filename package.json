@@ -1,0 +1,52 @@
+{
+  "name": "@srmcguirt/prettier-config",
+  "version": "0.0.0",
+  "description": "Prettier config",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srmcguirt/prettier-config"
+  },
+  "scripts": {
+    "build": "tsup",
+    "preinstall": "npx only-allow pnpm",
+    "prepack": "tsup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "prettier",
+    "config"
+  ],
+  "author": "Shane McGuirt<srmcguirt@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/prettier": "^2.7.1",
+    "prettier": "^2.7.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.3"
+  },
+  "peerDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "tsup": {
+    "clean": true,
+    "config": false,
+    "dts": true,
+    "entry": [
+      "src/index.ts"
+    ],
+    "external": [
+      "prettier"
+    ],
+    "format": [
+      "cjs"
+    ],
+    "sourcemap": false,
+    "splitting": false
+  }
+}
