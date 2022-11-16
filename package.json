@@ -1,19 +1,25 @@
 {
   "name": "@srmcguirt/prettier-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Prettier config",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/srmcguirt/prettier-config"
   },
   "scripts": {
     "build": "tsup",
+    "bump": "bumpp",
+    "clean": "rimraf dist",
     "preinstall": "npx only-allow pnpm",
     "prepack": "tsup",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "pnpm bump && pnpm publish",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "upgrade": "npm-check -u && npm audit fix"
   },
   "keywords": [
     "prettier",
@@ -23,7 +29,10 @@
   "license": "MIT",
   "devDependencies": {
     "@types/prettier": "^2.7.1",
+    "bumpp": "^8.2.1",
+    "npm-check": "^6.0.1",
     "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
     "tsup": "^6.5.0",
     "typescript": "^4.9.3"
   },
@@ -34,7 +43,6 @@
     "access": "public"
   },
   "tsup": {
-    "clean": true,
     "config": false,
     "dts": true,
     "entry": [
