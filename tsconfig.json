@@ -28,6 +28,7 @@
 	"exclude": [
 		"build-*/**",
 		"build/**",
-		"test/**"
+		"test/**",
+		"dist"
 	]
 }
