@@ -3,7 +3,7 @@ import { Config } from "prettier";
 const prettierConfig: Config = {
     bracketSpacing: true,
     printWidth: 100,
-    quoteProps: "as-needed",
+    quoteProps: "consistent",
     requirePragma: false,
     semi: false,
     singleQuote: true,

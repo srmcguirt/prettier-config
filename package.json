@@ -1,6 +1,6 @@
 {
   "name": "@srmcguirt/prettier-config",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Prettier config",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,11 +13,10 @@
   },
   "scripts": {
     "build": "tsup",
-    "bump": "bumpp",
-    "clean": "rimraf dist",
+    "bump": "bumpp -r",
     "preinstall": "npx only-allow pnpm",
     "prepack": "tsup",
-    "release": "pnpm bump && pnpm publish",
+    "release": "pnpm bump && pnpm -r publish",
     "test": "echo \"Error: no test specified\" && exit 1",
     "upgrade": "npm-check -u && npm audit fix"
   },
@@ -28,22 +27,22 @@
   "author": "Shane McGuirt<srmcguirt@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/prettier": "^2.7.1",
-    "bumpp": "^8.2.1",
+    "@types/prettier": "^2.7.2",
+    "bumpp": "^9.1.0",
     "npm-check": "^6.0.1",
-    "prettier": "^2.7.1",
-    "rimraf": "^3.0.2",
-    "tsup": "^6.5.0",
-    "typescript": "^4.9.3"
+    "prettier": "^2.8.7",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.3"
   },
   "peerDependencies": {
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.2"
   },
   "publishConfig": {
     "access": "public"
   },
   "tsup": {
     "config": false,
+    "clean": true,
     "dts": true,
     "entry": [
       "src/index.ts"
